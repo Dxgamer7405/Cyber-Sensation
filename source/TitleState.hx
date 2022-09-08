@@ -208,7 +208,6 @@ class TitleState extends MusicBeatState
 						FlxG.save.data.comeagain = false;
 						
 					});
-				}));
 		});
 			
 
