@@ -26,11 +26,6 @@ class StoryMenuState extends MusicBeatState
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
 		['Bopeebo', 'Fresh', 'Dad Battle'],
-		['Spookeez', 'South', "Monster"],
-		['Pico', 'Philly Nice', "Blammed"],
-		['Satin Panties', "High", "Milf"],
-		['Cocoa', 'Eggnog', 'Winter Horrorland'],
-		['Senpai', 'Roses', 'Thorns']
 	];
 	var curDifficulty:Int = 1;
 
@@ -39,21 +34,11 @@ class StoryMenuState extends MusicBeatState
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
 		['dad', 'bf', 'gf'],
-		['spooky', 'bf', 'gf'],
-		['pico', 'bf', 'gf'],
-		['mom', 'bf', 'gf'],
-		['parents-christmas', 'bf', 'gf'],
-		['senpai', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [
 		"",
 		"Daddy Dearest",
-		"Spooky Month",
-		"PICO",
-		"MOMMY MUST MURDER",
-		"RED SNOW",
-		"Hating Simulator ft. Moawling"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -222,12 +207,16 @@ class StoryMenuState extends MusicBeatState
 			lock.y = grpWeekText.members[lock.ID].y;
 		});
 
-				if (FlxG.keys.justPressed.UP)
+		if (!movedBack)
+		{
+			if (!selectedWeek)
+			{
+				if (controls.UP_P)
 				{
 					changeWeek(-1);
 				}
 
-				if (FlxG.keys.justPressed.DOWN)
+				if (controls.DOWN_P)
 				{
 					changeWeek(1);
 				}
@@ -247,7 +236,6 @@ class StoryMenuState extends MusicBeatState
 				if (controls.LEFT_P)
 					changeDifficulty(-1);
 			}
-   }
 
 			if (controls.ACCEPT)
 			{
@@ -289,7 +277,7 @@ class StoryMenuState extends MusicBeatState
 
 			PlayState.storyDifficulty = curDifficulty;
 
-			// adjusting the song name to be compatible
+			//  the song name to be compatible
 			var songFormat = StringTools.replace(PlayState.storyPlaylist[0], " ", "-");
 			switch (songFormat) {
 				case 'Dad-Battle': songFormat = 'Dadbattle';
