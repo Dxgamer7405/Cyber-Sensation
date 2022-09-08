@@ -1,6 +1,5 @@
 package;
 
-import flixel.input.gamepad.FlxGamepad;
 import Controls.KeyboardScheme;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -225,8 +224,7 @@ class MainMenuState extends MusicBeatState
 									goToState();
 								});
 							}
-				   	}
-					});
+				   }
 				}
 			}
 		}
