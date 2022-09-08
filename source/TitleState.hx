@@ -194,10 +194,8 @@ class TitleState extends MusicBeatState
 
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-					LoadingState.loadAndSwitchState(new HopeVideoState("assets/videos/again.webm", function() {
 					PlayState.storyPlaylist = ['Last-Hope'];
 					PlayState.isStoryMode = true;
-		
 					PlayState.storyDifficulty = 2;
 		
 					PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + '-hard', StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
