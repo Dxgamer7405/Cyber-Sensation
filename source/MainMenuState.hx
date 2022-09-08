@@ -156,7 +156,7 @@ class MainMenuState extends MusicBeatState
 		changeItem();
 
     #if android
-  	addVirtualPad(LEFT_FULL, A_B);
+  	addVirtualPad(LEFT_RIGHT, A_B);
     #end
 
 		super.create();
@@ -181,12 +181,12 @@ class MainMenuState extends MusicBeatState
 
 			if (gamepad != null)
 			{
-				if (gamepad.justPressed.DPAD_UP)
+				if (gamepad.justPressed.UP)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changeItem(-1);
 				}
-				if (gamepad.justPressed.DPAD_DOWN)
+				if (gamepad.justPressed.DOWN)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 					changeItem(1);
