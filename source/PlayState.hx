@@ -1234,30 +1234,30 @@ class PlayState extends MusicBeatState
 					});
 				//case 'open-system' | 'wear-a-mask' | 'last-hope':
 				//	intro();
-				case 'open-system':
-					/*if (cutscene) {
+				/*case 'open-system':
+					 (cutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
 						LoadingState.loadAndSwitchState(new VideoState("assets/videos/intro.webm", new PlayState()));
 						
 						cutscene = false;
-					} else {*/
+					} else {
 						camHUD.visible = true;
 						camGame.visible = true;
 						intro();
-					}
-				case 'wear-a-mask':
-					/*if (cutscene) {
+					}*/
+				/* case 'wear-a-mask':
+					if (cutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
 						LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut1.webm", new PlayState()));
 						
 						cutscene = false;
-					} else {*/
+					} else {
 						camHUD.visible = true;
 						camGame.visible = true;
 						intro();
-					}
+					}*/
 				case 'last-hope':
 					intro();
 				case 'senpai':
@@ -2982,6 +2982,9 @@ class PlayState extends MusicBeatState
 							FlxG.save.data.beattae = true;
 							FlxG.sound.music.stop();
 				            vocals.stop();
+				            
+		       		LoadingState.loadAndSwitchState(new MainMenuState(), true);
+				            
 							//LoadingState.loadAndSwitchState(new VideoState("assets/videos/end.webm", new MainMenuState()));
 								
 							//FlxG.switchState(new MainMenuState());
