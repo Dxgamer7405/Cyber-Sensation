@@ -2969,6 +2969,8 @@ class PlayState extends MusicBeatState
 							TitleState.comehere = true;
 							FlxG.save.data.reset = true;
 							
+		       		LoadingState.loadAndSwitchState(new CloseState(), true);
+							
 							//LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut2.webm", new CloseState()));
 								
 							//FlxG.switchState(new MainMenuState());
