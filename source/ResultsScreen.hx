@@ -159,10 +159,6 @@ class ResultsScreen extends FlxSubState
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
-    #if android
-  	addVirtualPad(NONE, A);
-    #end
-
 		super.create();
 	}
 
@@ -174,9 +170,21 @@ class ResultsScreen extends FlxSubState
         if (music.volume < 0.5)
 			music.volume += 0.01 * elapsed;
 
+#if android
+var justTouched:Bool = false;
+
+for (touch in FlxG.touches.list)
+{
+        if (touch.justPressed)
+        {
+               justTouched = true;
+        }
+}
+#end
+
         // keybinds
 
-        if (PlayerSettings.player1.controls.ACCEPT)
+       if (PlayerSettings.player1.controls.ACCEPT #if android || justTouched #end)
         {
             music.fadeOut(0.3);
             
