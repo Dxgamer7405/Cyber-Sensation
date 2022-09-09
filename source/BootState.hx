@@ -49,7 +49,7 @@ class BootState extends FlxState
 		if (FlxG.keys.justPressed.Y){
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 				{
-					LoadingState.loadAndSwitchState(new HopeVideoState("assets/videos/vid.webm", function() {
+					//LoadingState.loadAndSwitchState(new HopeVideoState("assets/videos/vid.webm", function() {
 						PlayState.storyPlaylist = ['Last-Hope'];
 						PlayState.isStoryMode = true;
 			

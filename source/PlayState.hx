@@ -1235,25 +1235,25 @@ class PlayState extends MusicBeatState
 				//case 'open-system' | 'wear-a-mask' | 'last-hope':
 				//	intro();
 				case 'open-system':
-					if (cutscene) {
+					/*if (cutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
 						LoadingState.loadAndSwitchState(new VideoState("assets/videos/intro.webm", new PlayState()));
 						
 						cutscene = false;
-					} else {
+					} else {*/
 						camHUD.visible = true;
 						camGame.visible = true;
 						intro();
 					}
 				case 'wear-a-mask':
-					if (cutscene) {
+					/*if (cutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
 						LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut1.webm", new PlayState()));
 						
 						cutscene = false;
-					} else {
+					} else {*/
 						camHUD.visible = true;
 						camGame.visible = true;
 						intro();
@@ -2969,7 +2969,7 @@ class PlayState extends MusicBeatState
 							TitleState.comehere = true;
 							FlxG.save.data.reset = true;
 							
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut2.webm", new CloseState()));
+							//LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut2.webm", new CloseState()));
 								
 							//FlxG.switchState(new MainMenuState());
 							FlxG.sound.music.stop();
@@ -2980,7 +2980,7 @@ class PlayState extends MusicBeatState
 							FlxG.save.data.beattae = true;
 							FlxG.sound.music.stop();
 				            vocals.stop();
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/end.webm", new MainMenuState()));
+							//LoadingState.loadAndSwitchState(new VideoState("assets/videos/end.webm", new MainMenuState()));
 								
 							//FlxG.switchState(new MainMenuState());
 								
@@ -3055,8 +3055,8 @@ class PlayState extends MusicBeatState
 					FlxG.sound.music.stop();
 					switch(SONG.song.toLowerCase())
                     {
-					    case "wear-a-mask":
-				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut1.webm",new PlayState()));
+					    /*case "wear-a-mask":
+				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut1.webm",new PlayState()));*/
 						//case 'release':
 						//	LoadingState.loadAndSwitchState(new VideoState("assets/videos/cut3.webm",new PlayState()));
                         default:
