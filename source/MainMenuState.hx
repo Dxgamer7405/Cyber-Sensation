@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.gamepad.FlxGamepad;
 import Controls.KeyboardScheme;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -174,6 +175,8 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
+		if (!selectedSomethin)
+		{
 			if (FlxG.keys.justPressed.LEFT)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
