@@ -7,8 +7,7 @@ import openfl.utils.Assets as OpenFlAssets;
 
 class Paths
 {
-	inline public static var SOUND_EXT = #if android "mp3" #else "ogg" #end;
-	inline public static var VIDEO_EXT = "webm";
+	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 
 	static var currentLevel:String;
 
@@ -89,11 +88,6 @@ class Paths
 	inline static public function soundRandom(key:String, min:Int, max:Int, ?library:String)
 	{
 		return sound(key + FlxG.random.int(min, max), library);
-	}
-
-	static public function video(key:String)
-	{
-		return 'assets/videos/$key.$VIDEO_EXT';
 	}
 
 	inline static public function music(key:String, ?library:String)
